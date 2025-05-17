@@ -852,8 +852,8 @@ function gameLoop() {
     teacher2Active = true;
   }
 
-  if (teacher2Active && !hiding && now - lastMovementTime > 50  && now - lastHidingExitTime > 50) {
-    hp -= 2;
+  if (teacher2Active && !hiding && now - lastMovementTime > 250  && now - lastHidingExitTime > 250) {
+    hp--;
     teacher2Active = false;
     teacher2Visible = false;
     if (hp <= 0) deathReason = "Der Lehrer hat dich erwischt.";
@@ -955,7 +955,7 @@ function gameLoop() {
       playerBox.y > trapBox.y + trapBox.h
     );
     if (overlaps) {
-      hp--;
+      hp -= 2;
       deathReason = "Ins Vakuum reingelaufen.";
       vacuumTrap = null;
     }
@@ -975,5 +975,5 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-loadRoom(0);
+loadRoom(90);
 gameLoop();
