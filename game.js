@@ -414,7 +414,7 @@ function loadRoom(roomNumber) {
       const randomOffset = (Math.random() * 6 - 3) * 1000; // -3 bis +3 s
   
       clockDuration = Math.max(3000,
-        Math.floor(numRects * 2000 + (hasSchueler ? 4000 : 0) + randomOffset));
+        Math.floor(5000 + numRects * 2000 + (hasSchueler ? 4000 : 0) + randomOffset));
       clockStartTime = Date.now();
       clockActive = true;
     }
@@ -975,5 +975,5 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-loadRoom(90);
+loadRoom(100);
 gameLoop();
