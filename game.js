@@ -975,5 +975,5 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-loadRoom(100);
+loadRoom(0);
 gameLoop();
